@@ -1,0 +1,24 @@
+<br /><br /><br /><br /><br /><br />
+
+<div class="center">
+
+    <mat-form-field class="example-form-field">
+        <mat-label>Type an number here.</mat-label>
+        <input matInput type="text" [(ngModel)]="value">
+     
+    </mat-form-field>
+    <mat-form-field class="example-form-field">
+        <mat-label>Pick Converter</mat-label>
+        <mat-select [(value)]="converter">
+            <mat-option value="getFahr/">Celsius to Fahrenheit</mat-option>
+            <mat-option value="getCel/">Fahrenheit to Celsius</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <button class="convert" *ngIf="value && converter" mat-flat-button color="primary" (click)="getAnswer()">Convert</button>
+    <button class="convert" *ngIf="!value || !converter" mat-flat-button color="primary" disabled (click)="getAnswer()">Convert</button>
+    <br/>
+    <h3> {{return}} </h3>
+
+
+</div>
